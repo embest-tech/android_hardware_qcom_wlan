@@ -15,6 +15,7 @@
 #
 LOCAL_PATH := $(call my-dir)
 
+ifeq ($(WPA_SUPPLICANT_VERSION),VER_0_8_UNITE)
 ########################
 
 include $(CLEAR_VARS)
@@ -25,6 +26,7 @@ LOCAL_SRC_FILES := android_dhcpcd.conf
 include $(BUILD_PREBUILT)
 
 #########################
+endif
 
 WIFI_DRIVER_SOCKET_IFACE := wlan0
 ifeq ($(strip $(WPA_SUPPLICANT_VERSION)),VER_0_8_X)
